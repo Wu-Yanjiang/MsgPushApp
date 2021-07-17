@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.103:3306/plms?serverTimezone=Asia/Shanghai&autoReconnect=true
+    username: root
+    password: 123456

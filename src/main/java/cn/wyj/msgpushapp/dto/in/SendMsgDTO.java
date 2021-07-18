@@ -1,7 +1,6 @@
 package cn.wyj.msgpushapp.dto.in;
 
 import lombok.Data;
-import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
 

@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.Objects;
 
@@ -18,9 +19,15 @@ import java.util.Objects;
 @RestControllerAdvice
 public class ControllerAdvice {
 
-    @ExceptionHandler({BusinessException.class, BindException.class})
+    /**
+     * 捕获业务层抛出的异常信息
+     *
+     * @param ex 异常
+     *
+     * @return Controller的返回
+     */
+    @ExceptionHandler({BusinessException.class, BindException.class, NoHandlerFoundException.class})
     public Result resolveSystemException(Exception ex) {
-        log.warn("Exception Happened:", ex);
         if (ex instanceof BusinessException) {
             BusinessException e = (BusinessException) ex;
             return Result.fail(e.getReturnResultEnum());
@@ -28,11 +35,20 @@ public class ControllerAdvice {
             BindException e = (BindException) ex;
             return Result.fail(ReturnResultEnum.WrongParams.getCode(),
                     Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
+        } else if (ex instanceof NoHandlerFoundException) {
+            return Result.fail(ReturnResultEnum.PathCannotFind);
         } else {
             return Result.fail();
         }
     }
 
+    /**
+     * 捕获系统内部异常信息
+     *
+     * @param ex 异常
+     *
+     * @return 错误信息
+     */
     @ExceptionHandler(Exception.class)
     public Result resolveException(Exception ex) {
         log.warn("Exception Happened:", ex);

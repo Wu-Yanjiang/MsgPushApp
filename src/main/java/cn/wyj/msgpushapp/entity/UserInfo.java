@@ -3,16 +3,17 @@ package cn.wyj.msgpushapp.entity;
 
 public class UserInfo {
 
-    private long id;
+    private Long id;
     private String name;
+    private String email;
     private String sendKey;
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,4 +35,11 @@ public class UserInfo {
         this.sendKey = sendKey;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

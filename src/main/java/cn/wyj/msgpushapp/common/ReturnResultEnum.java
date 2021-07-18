@@ -8,6 +8,8 @@ public enum ReturnResultEnum {
     SystemError(1003, "系统错误"),
     NoSendKeyConfigured(1004, "没有配置的sendKey"),
     NoMsgServiceConfigured(1005, "没有配置的发送服务信息"),
+    VerifyCodeIsExpired(1006, "注册链接过期了"),
+    PathCannotFind(1007, "找不到路径"),
     ;
 
     private int code;

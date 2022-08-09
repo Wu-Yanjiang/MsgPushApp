@@ -1,5 +1,4 @@
-use
-    msg_push_service;
+use msg_push_service;
 
 drop table if exists user_info;
 create table user_info

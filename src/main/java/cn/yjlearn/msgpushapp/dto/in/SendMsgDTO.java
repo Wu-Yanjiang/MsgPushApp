@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.dto.in;
+package cn.yjlearn.msgpushapp.dto.in;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.entity;
+package cn.yjlearn.msgpushapp.entity;
 
 
 public class UserInfo {

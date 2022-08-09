@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.config;
+package cn.yjlearn.msgpushapp.config;
 
 /**
  * 线程池配置

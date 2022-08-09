@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.common;
+package cn.yjlearn.msgpushapp.common;
 
 public enum ReturnResultEnum {
 

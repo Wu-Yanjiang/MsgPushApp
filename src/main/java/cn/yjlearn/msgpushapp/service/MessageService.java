@@ -1,12 +1,12 @@
-package cn.wyj.msgpushapp.service;
+package cn.yjlearn.msgpushapp.service;
 
-import cn.wyj.msgpushapp.common.BusinessException;
-import cn.wyj.msgpushapp.common.ReturnResultEnum;
-import cn.wyj.msgpushapp.dao.MessageConfigMapper;
-import cn.wyj.msgpushapp.dao.UserInfoMapper;
-import cn.wyj.msgpushapp.dto.in.SendMsgDTO;
-import cn.wyj.msgpushapp.entity.MessageConfig;
-import cn.wyj.msgpushapp.entity.UserInfo;
+import cn.yjlearn.msgpushapp.common.BusinessException;
+import cn.yjlearn.msgpushapp.common.ReturnResultEnum;
+import cn.yjlearn.msgpushapp.dao.MessageConfigMapper;
+import cn.yjlearn.msgpushapp.dao.UserInfoMapper;
+import cn.yjlearn.msgpushapp.dto.in.SendMsgDTO;
+import cn.yjlearn.msgpushapp.entity.MessageConfig;
+import cn.yjlearn.msgpushapp.entity.UserInfo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

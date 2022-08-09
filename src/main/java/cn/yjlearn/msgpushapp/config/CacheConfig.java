@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.config;
+package cn.yjlearn.msgpushapp.config;
 
 import org.springframework.context.annotation.Configuration;
 

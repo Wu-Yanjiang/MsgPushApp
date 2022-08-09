@@ -1,9 +1,9 @@
-package cn.wyj.msgpushapp.controller;
+package cn.yjlearn.msgpushapp.controller;
 
-import cn.wyj.msgpushapp.common.Result;
-import cn.wyj.msgpushapp.common.ReturnResultEnum;
-import cn.wyj.msgpushapp.dto.in.UserRegisterInfoDTO;
-import cn.wyj.msgpushapp.service.UserInfoService;
+import cn.yjlearn.msgpushapp.common.Result;
+import cn.yjlearn.msgpushapp.common.ReturnResultEnum;
+import cn.yjlearn.msgpushapp.dto.in.UserRegisterInfoDTO;
+import cn.yjlearn.msgpushapp.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.common;
+package cn.yjlearn.msgpushapp.common;
 
 import lombok.Builder;
 import lombok.Data;

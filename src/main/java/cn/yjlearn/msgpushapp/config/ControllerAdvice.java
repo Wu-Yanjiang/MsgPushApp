@@ -1,8 +1,8 @@
-package cn.wyj.msgpushapp.config;
+package cn.yjlearn.msgpushapp.config;
 
-import cn.wyj.msgpushapp.common.BusinessException;
-import cn.wyj.msgpushapp.common.Result;
-import cn.wyj.msgpushapp.common.ReturnResultEnum;
+import cn.yjlearn.msgpushapp.common.BusinessException;
+import cn.yjlearn.msgpushapp.common.Result;
+import cn.yjlearn.msgpushapp.common.ReturnResultEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

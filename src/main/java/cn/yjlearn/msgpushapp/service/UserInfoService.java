@@ -1,4 +1,4 @@
-package cn.wyj.msgpushapp.service;
+package cn.yjlearn.msgpushapp.service;
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.extra.mail.MailUtil;

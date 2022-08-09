@@ -10,10 +10,11 @@ public enum ReturnResultEnum {
     NoMsgServiceConfigured(1005, "没有配置的发送服务信息"),
     VerifyCodeIsExpired(1006, "注册链接过期了"),
     PathCannotFind(1007, "找不到路径"),
+    GetTokenFailed(1008, "获取token失败")
     ;
 
-    private int code;
-    private String msg;
+    private final int code;
+    private final String msg;
 
     ReturnResultEnum(int code, String msg) {
         this.code = code;

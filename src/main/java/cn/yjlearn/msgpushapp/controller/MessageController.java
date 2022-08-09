@@ -18,7 +18,6 @@ import javax.validation.Valid;
 @Slf4j
 @RestController
 @RequestMapping("/message")
-@SuppressWarnings({"rawtypes"})
 public class MessageController {
 
     @Resource
@@ -31,7 +30,7 @@ public class MessageController {
      * @return result
      */
     @PostMapping("/push")
-    public Result sendMsg(@RequestBody @Valid SendMsgDTO dto) {
+    public Result<Void> sendMsg(@RequestBody @Valid SendMsgDTO dto) {
         log.info(dto.toString());
         messageService.sendMsgToUser(dto);
         return Result.success();

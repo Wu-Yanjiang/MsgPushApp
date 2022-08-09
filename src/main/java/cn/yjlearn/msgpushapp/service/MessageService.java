@@ -1,6 +1,7 @@
 package cn.yjlearn.msgpushapp.service;
 
-import cn.yjlearn.msgpushapp.common.BusinessException;
+import cn.yjlearn.msgpushapp.bean.WeChatMsgBean;
+import cn.yjlearn.msgpushapp.common.BizException;
 import cn.yjlearn.msgpushapp.common.ReturnResultEnum;
 import cn.yjlearn.msgpushapp.dao.MessageConfigMapper;
 import cn.yjlearn.msgpushapp.dao.UserInfoMapper;
@@ -33,12 +34,15 @@ public class MessageService {
         log.info("查询该用户绑定的");
         UserInfo user = userInfoMapper.selectOne(new QueryWrapper<UserInfo>().eq("send_key", dto.getSendKey()));
         if (Objects.isNull(user)) {
-            throw new BusinessException(ReturnResultEnum.NoSendKeyConfigured);
+            throw new BizException(ReturnResultEnum.NoSendKeyConfigured);
         }
         MessageConfig messageConfigured = messageConfigMapper.selectOne(new QueryWrapper<MessageConfig>().eq("user_id", user.getId()));
         if (Objects.isNull(messageConfigured)) {
-            throw new BusinessException(ReturnResultEnum.NoMsgServiceConfigured);
+            throw new BizException(ReturnResultEnum.NoMsgServiceConfigured);
         }
+
+        WeChatMsgBean msg = WeChatMsgBean.builder().agentTd(messageConfigured.getAgentId()).text(new WeChatMsgBean.Text(dto.getHead(), dto.getBody())).build();
+
 
     }
 

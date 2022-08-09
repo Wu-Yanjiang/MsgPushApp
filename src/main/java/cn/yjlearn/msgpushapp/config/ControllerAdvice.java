@@ -1,6 +1,6 @@
 package cn.yjlearn.msgpushapp.config;
 
-import cn.yjlearn.msgpushapp.common.BusinessException;
+import cn.yjlearn.msgpushapp.common.BizException;
 import cn.yjlearn.msgpushapp.common.Result;
 import cn.yjlearn.msgpushapp.common.ReturnResultEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -26,10 +26,10 @@ public class ControllerAdvice {
      *
      * @return Controller的返回
      */
-    @ExceptionHandler({BusinessException.class, BindException.class, NoHandlerFoundException.class})
+    @ExceptionHandler({BizException.class, BindException.class, NoHandlerFoundException.class})
     public Result resolveSystemException(Exception ex) {
-        if (ex instanceof BusinessException) {
-            BusinessException e = (BusinessException) ex;
+        if (ex instanceof BizException) {
+            BizException e = (BizException) ex;
             return Result.fail(e.getReturnResultEnum());
         } else if (ex instanceof BindException) {
             BindException e = (BindException) ex;

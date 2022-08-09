@@ -13,6 +13,7 @@ public class SendMsgDTO {
     @NotBlank(message = "标题非空")
     String head;
 
+    @NotBlank(message = "正文非空")
     String body;
 
 }

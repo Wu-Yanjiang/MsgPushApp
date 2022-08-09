@@ -13,7 +13,6 @@ import javax.validation.Valid;
 @Slf4j
 @RestController
 @RequestMapping("/user")
-@SuppressWarnings({"rawtypes"})
 public class UserInfoController {
 
     @Resource
@@ -27,18 +26,20 @@ public class UserInfoController {
      * @return 结果
      */
     @PostMapping("/register")
-    public Result register(@RequestBody @Valid UserRegisterInfoDTO dto) {
+    public Result<Void> register(@RequestBody @Valid UserRegisterInfoDTO dto) {
         userInfoService.emailVerify(dto.getEmail());
         return Result.success();
     }
 
     /**
+     * 验证邮箱注册码
+     *
      * @param code 随机注册码
      *
      * @return 结果
      */
-    @GetMapping("/register/email/verify/{code}")
-    public Result emailVerify(@PathVariable String code) {
+    @GetMapping("/email/verify/{code}")
+    public Result<Void> emailVerify(@PathVariable String code) {
         // 根据code从缓存中查询，如果过期或没找到就返回失败
         log.info("检查code:{}是否存在或过期", code);
         if (!"123456".equals(code)) {

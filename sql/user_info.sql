@@ -9,4 +9,3 @@ create table user_info
     send_key char(35)    not null default '' comment '用户密钥'
 ) engine = InnoDB
   default character set utf8mb4;
-

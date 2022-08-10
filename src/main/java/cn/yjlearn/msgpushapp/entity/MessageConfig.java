@@ -6,7 +6,7 @@ public class MessageConfig {
   private Long id;
   private long userId;
   private String companyId;
-  private String agentId;
+  private int agentId;
   private String appSecret;
 
 
@@ -37,11 +37,11 @@ public class MessageConfig {
   }
 
 
-  public String getAgentId() {
+  public int getAgentId() {
     return agentId;
   }
 
-  public void setAgentId(String agentId) {
+  public void setAgentId(int agentId) {
     this.agentId = agentId;
   }
 

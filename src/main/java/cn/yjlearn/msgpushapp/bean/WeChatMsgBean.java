@@ -37,8 +37,9 @@ import lombok.Data;
 @Builder
 public class WeChatMsgBean implements MsgBean {
 
+    @Builder.Default
     @JsonProperty(value = "touser")
-    private String toUser;
+    private String toUser = "@all";
 
     @JsonProperty("toparty")
     private String toParty;
@@ -46,11 +47,12 @@ public class WeChatMsgBean implements MsgBean {
     @JsonProperty("totag")
     private String toTag;
 
-    @JsonProperty(value = "msgtype", defaultValue = "text")
-    private String msgType;
+    @Builder.Default
+    @JsonProperty(value = "msgtype")
+    private String msgType = "text";
 
     @JsonProperty("agentid")
-    private String agentTd;
+    private int agentId;
 
     @JsonProperty("text")
     private Text text;
@@ -74,7 +76,7 @@ public class WeChatMsgBean implements MsgBean {
         private String content;
 
         public Text(String title, String content) {
-            this.content = title + "\n" + content;
+            this.content = title + "\r\n" + content;
         }
     }
 }

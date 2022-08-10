@@ -114,9 +114,9 @@ public class WeServiceChatSendService implements ISendMsgService {
         WechatCfg wCfg = (WechatCfg) cfg;
         WeChatMsgBean wcMsg = (WeChatMsgBean) msgBean;
         String accessToken = getAccessToken(wCfg.getCorpid(), wCfg.getCorpsecret());
-        String url = StrUtil.format(MSG_URL, HashMap.of("ACCESS_TOKEN", accessToken));
+        String url = StrUtil.format(MSG_URL, HashMap.of("ACCESS_TOKEN", accessToken).toJavaMap());
 
-        String r = HttpUtil.post(url, HashMap.of("msgtype", wcMsg.getMsgType(), "agentid", wcMsg.getAgentTd(), "text", wcMsg.getText()).toJavaMap());
+        String r = HttpUtil.post(url, HashMap.of("msgtype", wcMsg.getMsgType(), "agentid", wcMsg.getAgentId(), "text", wcMsg.getText()).toJavaMap());
         log.info(r);
 
     }

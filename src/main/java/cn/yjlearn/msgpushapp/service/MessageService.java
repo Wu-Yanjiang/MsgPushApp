@@ -41,7 +41,7 @@ public class MessageService {
             throw new BizException(ReturnResultEnum.NoMsgServiceConfigured);
         }
 
-        WeChatMsgBean msg = WeChatMsgBean.builder().agentTd(messageConfigured.getAgentId()).text(new WeChatMsgBean.Text(dto.getHead(), dto.getBody())).build();
+        WeChatMsgBean msg = WeChatMsgBean.builder().agentId(messageConfigured.getAgentId()).text(new WeChatMsgBean.Text(dto.getHead(), dto.getBody())).build();
 
 
     }
